@@ -1,11 +1,15 @@
 import { API_URL } from "@/constants";
-import { queryOptions } from "@tanstack/react-query";
-import { Outlet, redirect, createRootRoute } from "@tanstack/react-router";
+import { queryOptions, QueryClient } from "@tanstack/react-query"; // Import QueryClient type
+import { Outlet, redirect, createRootRouteWithContext } from "@tanstack/react-router"; // Gunakan createRootRouteWithContext
 import { useAuthStore } from "@/stores/useAuthStore";
 
-export const Route = createRootRoute({
+interface RouterContext {
+  queryClient: QueryClient;
+}
+
+export const Route = createRootRouteWithContext<RouterContext>()({
   beforeLoad: async ({ context, location }) => {
-    const { queryClient } = context;
+    const { queryClient } = context; 
     const path = location.pathname;
 
     const roleBasePaths: Record<string, string> = {
