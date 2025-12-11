@@ -11,16 +11,28 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as ConsultantIndexRouteImport } from './routes/consultant/index'
+import { Route as ClientIndexRouteImport } from './routes/client/index'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AdminCreateUserRouteImport } from './routes/admin/create-user'
-import { Route as ClientLandIndexRouteImport } from './routes/client/land/index'
 import { Route as ClientLandCreateRouteImport } from './routes/client/land/create'
 import { Route as AdminUpdateUserIdRouteImport } from './routes/admin/update-user.$id'
-import { Route as ClientLandIdIndexRouteImport } from './routes/client/land/$id/index'
-import { Route as ClientLandUpdateIdRouteImport } from './routes/client/land/update.$id'
-import { Route as ClientLandIdSensorIndexRouteImport } from './routes/client/land/$id/sensor/index'
-import { Route as ClientLandIdSensorCreateRouteImport } from './routes/client/land/$id/sensor/create'
-import { Route as ClientLandIdSensorUpdateIdRouteImport } from './routes/client/land/$id/sensor/update.$id'
+import { Route as ClientLandLandIdIndexRouteImport } from './routes/client/land/$landId/index'
+import { Route as ClientLandLandIdUpdateRouteImport } from './routes/client/land/$landId/update'
+import { Route as ClientLandLandIdValveCreateRouteImport } from './routes/client/land/$landId/valve/create'
+import { Route as ClientLandLandIdSensorCreateRouteImport } from './routes/client/land/$landId/sensor/create'
+import { Route as ClientLandLandIdPumpCreateRouteImport } from './routes/client/land/$landId/pump/create'
+import { Route as ClientLandLandIdPlantCreateRouteImport } from './routes/client/land/$landId/plant/create'
+import { Route as ClientLandLandIdAutomationCreateRouteImport } from './routes/client/land/$landId/automation/create'
+import { Route as ClientLandLandIdValveValveIdIndexRouteImport } from './routes/client/land/$landId/valve/$valveId/index'
+import { Route as ClientLandLandIdSensorSensorIdIndexRouteImport } from './routes/client/land/$landId/sensor/$sensorId/index'
+import { Route as ClientLandLandIdPumpPumpIdIndexRouteImport } from './routes/client/land/$landId/pump/$pumpId/index'
+import { Route as ClientLandLandIdPlantPlantIdIndexRouteImport } from './routes/client/land/$landId/plant/$plantId/index'
+import { Route as ClientLandLandIdAutomationAutomationIdIndexRouteImport } from './routes/client/land/$landId/automation/$automationId/index'
+import { Route as ClientLandLandIdValveValveIdUpdateRouteImport } from './routes/client/land/$landId/valve/$valveId/update'
+import { Route as ClientLandLandIdSensorSensorIdUpdateRouteImport } from './routes/client/land/$landId/sensor/$sensorId/update'
+import { Route as ClientLandLandIdPumpPumpIdUpdateRouteImport } from './routes/client/land/$landId/pump/$pumpId/update'
+import { Route as ClientLandLandIdPlantPlantIdUpdateRouteImport } from './routes/client/land/$landId/plant/$plantId/update'
+import { Route as ClientLandLandIdAutomationAutomationIdUpdateRouteImport } from './routes/client/land/$landId/automation/$automationId/update'
 
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
@@ -30,6 +42,11 @@ const LoginRoute = LoginRouteImport.update({
 const ConsultantIndexRoute = ConsultantIndexRouteImport.update({
   id: '/consultant/',
   path: '/consultant/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClientIndexRoute = ClientIndexRouteImport.update({
+  id: '/client/',
+  path: '/client/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminIndexRoute = AdminIndexRouteImport.update({
@@ -42,11 +59,6 @@ const AdminCreateUserRoute = AdminCreateUserRouteImport.update({
   path: '/admin/create-user',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ClientLandIndexRoute = ClientLandIndexRouteImport.update({
-  id: '/client/land/',
-  path: '/client/land/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ClientLandCreateRoute = ClientLandCreateRouteImport.update({
   id: '/client/land/create',
   path: '/client/land/create',
@@ -57,31 +69,104 @@ const AdminUpdateUserIdRoute = AdminUpdateUserIdRouteImport.update({
   path: '/admin/update-user/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ClientLandIdIndexRoute = ClientLandIdIndexRouteImport.update({
-  id: '/client/land/$id/',
-  path: '/client/land/$id/',
+const ClientLandLandIdIndexRoute = ClientLandLandIdIndexRouteImport.update({
+  id: '/client/land/$landId/',
+  path: '/client/land/$landId/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ClientLandUpdateIdRoute = ClientLandUpdateIdRouteImport.update({
-  id: '/client/land/update/$id',
-  path: '/client/land/update/$id',
+const ClientLandLandIdUpdateRoute = ClientLandLandIdUpdateRouteImport.update({
+  id: '/client/land/$landId/update',
+  path: '/client/land/$landId/update',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ClientLandIdSensorIndexRoute = ClientLandIdSensorIndexRouteImport.update({
-  id: '/client/land/$id/sensor/',
-  path: '/client/land/$id/sensor/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ClientLandIdSensorCreateRoute =
-  ClientLandIdSensorCreateRouteImport.update({
-    id: '/client/land/$id/sensor/create',
-    path: '/client/land/$id/sensor/create',
+const ClientLandLandIdValveCreateRoute =
+  ClientLandLandIdValveCreateRouteImport.update({
+    id: '/client/land/$landId/valve/create',
+    path: '/client/land/$landId/valve/create',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ClientLandIdSensorUpdateIdRoute =
-  ClientLandIdSensorUpdateIdRouteImport.update({
-    id: '/client/land/$id/sensor/update/$id',
-    path: '/client/land/$id/sensor/update/$id',
+const ClientLandLandIdSensorCreateRoute =
+  ClientLandLandIdSensorCreateRouteImport.update({
+    id: '/client/land/$landId/sensor/create',
+    path: '/client/land/$landId/sensor/create',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ClientLandLandIdPumpCreateRoute =
+  ClientLandLandIdPumpCreateRouteImport.update({
+    id: '/client/land/$landId/pump/create',
+    path: '/client/land/$landId/pump/create',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ClientLandLandIdPlantCreateRoute =
+  ClientLandLandIdPlantCreateRouteImport.update({
+    id: '/client/land/$landId/plant/create',
+    path: '/client/land/$landId/plant/create',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ClientLandLandIdAutomationCreateRoute =
+  ClientLandLandIdAutomationCreateRouteImport.update({
+    id: '/client/land/$landId/automation/create',
+    path: '/client/land/$landId/automation/create',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ClientLandLandIdValveValveIdIndexRoute =
+  ClientLandLandIdValveValveIdIndexRouteImport.update({
+    id: '/client/land/$landId/valve/$valveId/',
+    path: '/client/land/$landId/valve/$valveId/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ClientLandLandIdSensorSensorIdIndexRoute =
+  ClientLandLandIdSensorSensorIdIndexRouteImport.update({
+    id: '/client/land/$landId/sensor/$sensorId/',
+    path: '/client/land/$landId/sensor/$sensorId/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ClientLandLandIdPumpPumpIdIndexRoute =
+  ClientLandLandIdPumpPumpIdIndexRouteImport.update({
+    id: '/client/land/$landId/pump/$pumpId/',
+    path: '/client/land/$landId/pump/$pumpId/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ClientLandLandIdPlantPlantIdIndexRoute =
+  ClientLandLandIdPlantPlantIdIndexRouteImport.update({
+    id: '/client/land/$landId/plant/$plantId/',
+    path: '/client/land/$landId/plant/$plantId/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ClientLandLandIdAutomationAutomationIdIndexRoute =
+  ClientLandLandIdAutomationAutomationIdIndexRouteImport.update({
+    id: '/client/land/$landId/automation/$automationId/',
+    path: '/client/land/$landId/automation/$automationId/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ClientLandLandIdValveValveIdUpdateRoute =
+  ClientLandLandIdValveValveIdUpdateRouteImport.update({
+    id: '/client/land/$landId/valve/$valveId/update',
+    path: '/client/land/$landId/valve/$valveId/update',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ClientLandLandIdSensorSensorIdUpdateRoute =
+  ClientLandLandIdSensorSensorIdUpdateRouteImport.update({
+    id: '/client/land/$landId/sensor/$sensorId/update',
+    path: '/client/land/$landId/sensor/$sensorId/update',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ClientLandLandIdPumpPumpIdUpdateRoute =
+  ClientLandLandIdPumpPumpIdUpdateRouteImport.update({
+    id: '/client/land/$landId/pump/$pumpId/update',
+    path: '/client/land/$landId/pump/$pumpId/update',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ClientLandLandIdPlantPlantIdUpdateRoute =
+  ClientLandLandIdPlantPlantIdUpdateRouteImport.update({
+    id: '/client/land/$landId/plant/$plantId/update',
+    path: '/client/land/$landId/plant/$plantId/update',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ClientLandLandIdAutomationAutomationIdUpdateRoute =
+  ClientLandLandIdAutomationAutomationIdUpdateRouteImport.update({
+    id: '/client/land/$landId/automation/$automationId/update',
+    path: '/client/land/$landId/automation/$automationId/update',
     getParentRoute: () => rootRouteImport,
   } as any)
 
@@ -89,44 +174,80 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/admin/create-user': typeof AdminCreateUserRoute
   '/admin': typeof AdminIndexRoute
+  '/client': typeof ClientIndexRoute
   '/consultant': typeof ConsultantIndexRoute
   '/admin/update-user/$id': typeof AdminUpdateUserIdRoute
   '/client/land/create': typeof ClientLandCreateRoute
-  '/client/land': typeof ClientLandIndexRoute
-  '/client/land/update/$id': typeof ClientLandUpdateIdRoute
-  '/client/land/$id': typeof ClientLandIdIndexRoute
-  '/client/land/$id/sensor/create': typeof ClientLandIdSensorCreateRoute
-  '/client/land/$id/sensor': typeof ClientLandIdSensorIndexRoute
-  '/client/land/$id/sensor/update/$id': typeof ClientLandIdSensorUpdateIdRoute
+  '/client/land/$landId/update': typeof ClientLandLandIdUpdateRoute
+  '/client/land/$landId': typeof ClientLandLandIdIndexRoute
+  '/client/land/$landId/automation/create': typeof ClientLandLandIdAutomationCreateRoute
+  '/client/land/$landId/plant/create': typeof ClientLandLandIdPlantCreateRoute
+  '/client/land/$landId/pump/create': typeof ClientLandLandIdPumpCreateRoute
+  '/client/land/$landId/sensor/create': typeof ClientLandLandIdSensorCreateRoute
+  '/client/land/$landId/valve/create': typeof ClientLandLandIdValveCreateRoute
+  '/client/land/$landId/automation/$automationId/update': typeof ClientLandLandIdAutomationAutomationIdUpdateRoute
+  '/client/land/$landId/plant/$plantId/update': typeof ClientLandLandIdPlantPlantIdUpdateRoute
+  '/client/land/$landId/pump/$pumpId/update': typeof ClientLandLandIdPumpPumpIdUpdateRoute
+  '/client/land/$landId/sensor/$sensorId/update': typeof ClientLandLandIdSensorSensorIdUpdateRoute
+  '/client/land/$landId/valve/$valveId/update': typeof ClientLandLandIdValveValveIdUpdateRoute
+  '/client/land/$landId/automation/$automationId': typeof ClientLandLandIdAutomationAutomationIdIndexRoute
+  '/client/land/$landId/plant/$plantId': typeof ClientLandLandIdPlantPlantIdIndexRoute
+  '/client/land/$landId/pump/$pumpId': typeof ClientLandLandIdPumpPumpIdIndexRoute
+  '/client/land/$landId/sensor/$sensorId': typeof ClientLandLandIdSensorSensorIdIndexRoute
+  '/client/land/$landId/valve/$valveId': typeof ClientLandLandIdValveValveIdIndexRoute
 }
 export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/admin/create-user': typeof AdminCreateUserRoute
   '/admin': typeof AdminIndexRoute
+  '/client': typeof ClientIndexRoute
   '/consultant': typeof ConsultantIndexRoute
   '/admin/update-user/$id': typeof AdminUpdateUserIdRoute
   '/client/land/create': typeof ClientLandCreateRoute
-  '/client/land': typeof ClientLandIndexRoute
-  '/client/land/update/$id': typeof ClientLandUpdateIdRoute
-  '/client/land/$id': typeof ClientLandIdIndexRoute
-  '/client/land/$id/sensor/create': typeof ClientLandIdSensorCreateRoute
-  '/client/land/$id/sensor': typeof ClientLandIdSensorIndexRoute
-  '/client/land/$id/sensor/update/$id': typeof ClientLandIdSensorUpdateIdRoute
+  '/client/land/$landId/update': typeof ClientLandLandIdUpdateRoute
+  '/client/land/$landId': typeof ClientLandLandIdIndexRoute
+  '/client/land/$landId/automation/create': typeof ClientLandLandIdAutomationCreateRoute
+  '/client/land/$landId/plant/create': typeof ClientLandLandIdPlantCreateRoute
+  '/client/land/$landId/pump/create': typeof ClientLandLandIdPumpCreateRoute
+  '/client/land/$landId/sensor/create': typeof ClientLandLandIdSensorCreateRoute
+  '/client/land/$landId/valve/create': typeof ClientLandLandIdValveCreateRoute
+  '/client/land/$landId/automation/$automationId/update': typeof ClientLandLandIdAutomationAutomationIdUpdateRoute
+  '/client/land/$landId/plant/$plantId/update': typeof ClientLandLandIdPlantPlantIdUpdateRoute
+  '/client/land/$landId/pump/$pumpId/update': typeof ClientLandLandIdPumpPumpIdUpdateRoute
+  '/client/land/$landId/sensor/$sensorId/update': typeof ClientLandLandIdSensorSensorIdUpdateRoute
+  '/client/land/$landId/valve/$valveId/update': typeof ClientLandLandIdValveValveIdUpdateRoute
+  '/client/land/$landId/automation/$automationId': typeof ClientLandLandIdAutomationAutomationIdIndexRoute
+  '/client/land/$landId/plant/$plantId': typeof ClientLandLandIdPlantPlantIdIndexRoute
+  '/client/land/$landId/pump/$pumpId': typeof ClientLandLandIdPumpPumpIdIndexRoute
+  '/client/land/$landId/sensor/$sensorId': typeof ClientLandLandIdSensorSensorIdIndexRoute
+  '/client/land/$landId/valve/$valveId': typeof ClientLandLandIdValveValveIdIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/login': typeof LoginRoute
   '/admin/create-user': typeof AdminCreateUserRoute
   '/admin/': typeof AdminIndexRoute
+  '/client/': typeof ClientIndexRoute
   '/consultant/': typeof ConsultantIndexRoute
   '/admin/update-user/$id': typeof AdminUpdateUserIdRoute
   '/client/land/create': typeof ClientLandCreateRoute
-  '/client/land/': typeof ClientLandIndexRoute
-  '/client/land/update/$id': typeof ClientLandUpdateIdRoute
-  '/client/land/$id/': typeof ClientLandIdIndexRoute
-  '/client/land/$id/sensor/create': typeof ClientLandIdSensorCreateRoute
-  '/client/land/$id/sensor/': typeof ClientLandIdSensorIndexRoute
-  '/client/land/$id/sensor/update/$id': typeof ClientLandIdSensorUpdateIdRoute
+  '/client/land/$landId/update': typeof ClientLandLandIdUpdateRoute
+  '/client/land/$landId/': typeof ClientLandLandIdIndexRoute
+  '/client/land/$landId/automation/create': typeof ClientLandLandIdAutomationCreateRoute
+  '/client/land/$landId/plant/create': typeof ClientLandLandIdPlantCreateRoute
+  '/client/land/$landId/pump/create': typeof ClientLandLandIdPumpCreateRoute
+  '/client/land/$landId/sensor/create': typeof ClientLandLandIdSensorCreateRoute
+  '/client/land/$landId/valve/create': typeof ClientLandLandIdValveCreateRoute
+  '/client/land/$landId/automation/$automationId/update': typeof ClientLandLandIdAutomationAutomationIdUpdateRoute
+  '/client/land/$landId/plant/$plantId/update': typeof ClientLandLandIdPlantPlantIdUpdateRoute
+  '/client/land/$landId/pump/$pumpId/update': typeof ClientLandLandIdPumpPumpIdUpdateRoute
+  '/client/land/$landId/sensor/$sensorId/update': typeof ClientLandLandIdSensorSensorIdUpdateRoute
+  '/client/land/$landId/valve/$valveId/update': typeof ClientLandLandIdValveValveIdUpdateRoute
+  '/client/land/$landId/automation/$automationId/': typeof ClientLandLandIdAutomationAutomationIdIndexRoute
+  '/client/land/$landId/plant/$plantId/': typeof ClientLandLandIdPlantPlantIdIndexRoute
+  '/client/land/$landId/pump/$pumpId/': typeof ClientLandLandIdPumpPumpIdIndexRoute
+  '/client/land/$landId/sensor/$sensorId/': typeof ClientLandLandIdSensorSensorIdIndexRoute
+  '/client/land/$landId/valve/$valveId/': typeof ClientLandLandIdValveValveIdIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -134,58 +255,106 @@ export interface FileRouteTypes {
     | '/login'
     | '/admin/create-user'
     | '/admin'
+    | '/client'
     | '/consultant'
     | '/admin/update-user/$id'
     | '/client/land/create'
-    | '/client/land'
-    | '/client/land/update/$id'
-    | '/client/land/$id'
-    | '/client/land/$id/sensor/create'
-    | '/client/land/$id/sensor'
-    | '/client/land/$id/sensor/update/$id'
+    | '/client/land/$landId/update'
+    | '/client/land/$landId'
+    | '/client/land/$landId/automation/create'
+    | '/client/land/$landId/plant/create'
+    | '/client/land/$landId/pump/create'
+    | '/client/land/$landId/sensor/create'
+    | '/client/land/$landId/valve/create'
+    | '/client/land/$landId/automation/$automationId/update'
+    | '/client/land/$landId/plant/$plantId/update'
+    | '/client/land/$landId/pump/$pumpId/update'
+    | '/client/land/$landId/sensor/$sensorId/update'
+    | '/client/land/$landId/valve/$valveId/update'
+    | '/client/land/$landId/automation/$automationId'
+    | '/client/land/$landId/plant/$plantId'
+    | '/client/land/$landId/pump/$pumpId'
+    | '/client/land/$landId/sensor/$sensorId'
+    | '/client/land/$landId/valve/$valveId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/login'
     | '/admin/create-user'
     | '/admin'
+    | '/client'
     | '/consultant'
     | '/admin/update-user/$id'
     | '/client/land/create'
-    | '/client/land'
-    | '/client/land/update/$id'
-    | '/client/land/$id'
-    | '/client/land/$id/sensor/create'
-    | '/client/land/$id/sensor'
-    | '/client/land/$id/sensor/update/$id'
+    | '/client/land/$landId/update'
+    | '/client/land/$landId'
+    | '/client/land/$landId/automation/create'
+    | '/client/land/$landId/plant/create'
+    | '/client/land/$landId/pump/create'
+    | '/client/land/$landId/sensor/create'
+    | '/client/land/$landId/valve/create'
+    | '/client/land/$landId/automation/$automationId/update'
+    | '/client/land/$landId/plant/$plantId/update'
+    | '/client/land/$landId/pump/$pumpId/update'
+    | '/client/land/$landId/sensor/$sensorId/update'
+    | '/client/land/$landId/valve/$valveId/update'
+    | '/client/land/$landId/automation/$automationId'
+    | '/client/land/$landId/plant/$plantId'
+    | '/client/land/$landId/pump/$pumpId'
+    | '/client/land/$landId/sensor/$sensorId'
+    | '/client/land/$landId/valve/$valveId'
   id:
     | '__root__'
     | '/login'
     | '/admin/create-user'
     | '/admin/'
+    | '/client/'
     | '/consultant/'
     | '/admin/update-user/$id'
     | '/client/land/create'
-    | '/client/land/'
-    | '/client/land/update/$id'
-    | '/client/land/$id/'
-    | '/client/land/$id/sensor/create'
-    | '/client/land/$id/sensor/'
-    | '/client/land/$id/sensor/update/$id'
+    | '/client/land/$landId/update'
+    | '/client/land/$landId/'
+    | '/client/land/$landId/automation/create'
+    | '/client/land/$landId/plant/create'
+    | '/client/land/$landId/pump/create'
+    | '/client/land/$landId/sensor/create'
+    | '/client/land/$landId/valve/create'
+    | '/client/land/$landId/automation/$automationId/update'
+    | '/client/land/$landId/plant/$plantId/update'
+    | '/client/land/$landId/pump/$pumpId/update'
+    | '/client/land/$landId/sensor/$sensorId/update'
+    | '/client/land/$landId/valve/$valveId/update'
+    | '/client/land/$landId/automation/$automationId/'
+    | '/client/land/$landId/plant/$plantId/'
+    | '/client/land/$landId/pump/$pumpId/'
+    | '/client/land/$landId/sensor/$sensorId/'
+    | '/client/land/$landId/valve/$valveId/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   LoginRoute: typeof LoginRoute
   AdminCreateUserRoute: typeof AdminCreateUserRoute
   AdminIndexRoute: typeof AdminIndexRoute
+  ClientIndexRoute: typeof ClientIndexRoute
   ConsultantIndexRoute: typeof ConsultantIndexRoute
   AdminUpdateUserIdRoute: typeof AdminUpdateUserIdRoute
   ClientLandCreateRoute: typeof ClientLandCreateRoute
-  ClientLandIndexRoute: typeof ClientLandIndexRoute
-  ClientLandUpdateIdRoute: typeof ClientLandUpdateIdRoute
-  ClientLandIdIndexRoute: typeof ClientLandIdIndexRoute
-  ClientLandIdSensorCreateRoute: typeof ClientLandIdSensorCreateRoute
-  ClientLandIdSensorIndexRoute: typeof ClientLandIdSensorIndexRoute
-  ClientLandIdSensorUpdateIdRoute: typeof ClientLandIdSensorUpdateIdRoute
+  ClientLandLandIdUpdateRoute: typeof ClientLandLandIdUpdateRoute
+  ClientLandLandIdIndexRoute: typeof ClientLandLandIdIndexRoute
+  ClientLandLandIdAutomationCreateRoute: typeof ClientLandLandIdAutomationCreateRoute
+  ClientLandLandIdPlantCreateRoute: typeof ClientLandLandIdPlantCreateRoute
+  ClientLandLandIdPumpCreateRoute: typeof ClientLandLandIdPumpCreateRoute
+  ClientLandLandIdSensorCreateRoute: typeof ClientLandLandIdSensorCreateRoute
+  ClientLandLandIdValveCreateRoute: typeof ClientLandLandIdValveCreateRoute
+  ClientLandLandIdAutomationAutomationIdUpdateRoute: typeof ClientLandLandIdAutomationAutomationIdUpdateRoute
+  ClientLandLandIdPlantPlantIdUpdateRoute: typeof ClientLandLandIdPlantPlantIdUpdateRoute
+  ClientLandLandIdPumpPumpIdUpdateRoute: typeof ClientLandLandIdPumpPumpIdUpdateRoute
+  ClientLandLandIdSensorSensorIdUpdateRoute: typeof ClientLandLandIdSensorSensorIdUpdateRoute
+  ClientLandLandIdValveValveIdUpdateRoute: typeof ClientLandLandIdValveValveIdUpdateRoute
+  ClientLandLandIdAutomationAutomationIdIndexRoute: typeof ClientLandLandIdAutomationAutomationIdIndexRoute
+  ClientLandLandIdPlantPlantIdIndexRoute: typeof ClientLandLandIdPlantPlantIdIndexRoute
+  ClientLandLandIdPumpPumpIdIndexRoute: typeof ClientLandLandIdPumpPumpIdIndexRoute
+  ClientLandLandIdSensorSensorIdIndexRoute: typeof ClientLandLandIdSensorSensorIdIndexRoute
+  ClientLandLandIdValveValveIdIndexRoute: typeof ClientLandLandIdValveValveIdIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -204,6 +373,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConsultantIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/client/': {
+      id: '/client/'
+      path: '/client'
+      fullPath: '/client'
+      preLoaderRoute: typeof ClientIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/': {
       id: '/admin/'
       path: '/admin'
@@ -216,13 +392,6 @@ declare module '@tanstack/react-router' {
       path: '/admin/create-user'
       fullPath: '/admin/create-user'
       preLoaderRoute: typeof AdminCreateUserRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/client/land/': {
-      id: '/client/land/'
-      path: '/client/land'
-      fullPath: '/client/land'
-      preLoaderRoute: typeof ClientLandIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/client/land/create': {
@@ -239,39 +408,123 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminUpdateUserIdRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/client/land/$id/': {
-      id: '/client/land/$id/'
-      path: '/client/land/$id'
-      fullPath: '/client/land/$id'
-      preLoaderRoute: typeof ClientLandIdIndexRouteImport
+    '/client/land/$landId/': {
+      id: '/client/land/$landId/'
+      path: '/client/land/$landId'
+      fullPath: '/client/land/$landId'
+      preLoaderRoute: typeof ClientLandLandIdIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/client/land/update/$id': {
-      id: '/client/land/update/$id'
-      path: '/client/land/update/$id'
-      fullPath: '/client/land/update/$id'
-      preLoaderRoute: typeof ClientLandUpdateIdRouteImport
+    '/client/land/$landId/update': {
+      id: '/client/land/$landId/update'
+      path: '/client/land/$landId/update'
+      fullPath: '/client/land/$landId/update'
+      preLoaderRoute: typeof ClientLandLandIdUpdateRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/client/land/$id/sensor/': {
-      id: '/client/land/$id/sensor/'
-      path: '/client/land/$id/sensor'
-      fullPath: '/client/land/$id/sensor'
-      preLoaderRoute: typeof ClientLandIdSensorIndexRouteImport
+    '/client/land/$landId/valve/create': {
+      id: '/client/land/$landId/valve/create'
+      path: '/client/land/$landId/valve/create'
+      fullPath: '/client/land/$landId/valve/create'
+      preLoaderRoute: typeof ClientLandLandIdValveCreateRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/client/land/$id/sensor/create': {
-      id: '/client/land/$id/sensor/create'
-      path: '/client/land/$id/sensor/create'
-      fullPath: '/client/land/$id/sensor/create'
-      preLoaderRoute: typeof ClientLandIdSensorCreateRouteImport
+    '/client/land/$landId/sensor/create': {
+      id: '/client/land/$landId/sensor/create'
+      path: '/client/land/$landId/sensor/create'
+      fullPath: '/client/land/$landId/sensor/create'
+      preLoaderRoute: typeof ClientLandLandIdSensorCreateRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/client/land/$id/sensor/update/$id': {
-      id: '/client/land/$id/sensor/update/$id'
-      path: '/client/land/$id/sensor/update/$id'
-      fullPath: '/client/land/$id/sensor/update/$id'
-      preLoaderRoute: typeof ClientLandIdSensorUpdateIdRouteImport
+    '/client/land/$landId/pump/create': {
+      id: '/client/land/$landId/pump/create'
+      path: '/client/land/$landId/pump/create'
+      fullPath: '/client/land/$landId/pump/create'
+      preLoaderRoute: typeof ClientLandLandIdPumpCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/client/land/$landId/plant/create': {
+      id: '/client/land/$landId/plant/create'
+      path: '/client/land/$landId/plant/create'
+      fullPath: '/client/land/$landId/plant/create'
+      preLoaderRoute: typeof ClientLandLandIdPlantCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/client/land/$landId/automation/create': {
+      id: '/client/land/$landId/automation/create'
+      path: '/client/land/$landId/automation/create'
+      fullPath: '/client/land/$landId/automation/create'
+      preLoaderRoute: typeof ClientLandLandIdAutomationCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/client/land/$landId/valve/$valveId/': {
+      id: '/client/land/$landId/valve/$valveId/'
+      path: '/client/land/$landId/valve/$valveId'
+      fullPath: '/client/land/$landId/valve/$valveId'
+      preLoaderRoute: typeof ClientLandLandIdValveValveIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/client/land/$landId/sensor/$sensorId/': {
+      id: '/client/land/$landId/sensor/$sensorId/'
+      path: '/client/land/$landId/sensor/$sensorId'
+      fullPath: '/client/land/$landId/sensor/$sensorId'
+      preLoaderRoute: typeof ClientLandLandIdSensorSensorIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/client/land/$landId/pump/$pumpId/': {
+      id: '/client/land/$landId/pump/$pumpId/'
+      path: '/client/land/$landId/pump/$pumpId'
+      fullPath: '/client/land/$landId/pump/$pumpId'
+      preLoaderRoute: typeof ClientLandLandIdPumpPumpIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/client/land/$landId/plant/$plantId/': {
+      id: '/client/land/$landId/plant/$plantId/'
+      path: '/client/land/$landId/plant/$plantId'
+      fullPath: '/client/land/$landId/plant/$plantId'
+      preLoaderRoute: typeof ClientLandLandIdPlantPlantIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/client/land/$landId/automation/$automationId/': {
+      id: '/client/land/$landId/automation/$automationId/'
+      path: '/client/land/$landId/automation/$automationId'
+      fullPath: '/client/land/$landId/automation/$automationId'
+      preLoaderRoute: typeof ClientLandLandIdAutomationAutomationIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/client/land/$landId/valve/$valveId/update': {
+      id: '/client/land/$landId/valve/$valveId/update'
+      path: '/client/land/$landId/valve/$valveId/update'
+      fullPath: '/client/land/$landId/valve/$valveId/update'
+      preLoaderRoute: typeof ClientLandLandIdValveValveIdUpdateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/client/land/$landId/sensor/$sensorId/update': {
+      id: '/client/land/$landId/sensor/$sensorId/update'
+      path: '/client/land/$landId/sensor/$sensorId/update'
+      fullPath: '/client/land/$landId/sensor/$sensorId/update'
+      preLoaderRoute: typeof ClientLandLandIdSensorSensorIdUpdateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/client/land/$landId/pump/$pumpId/update': {
+      id: '/client/land/$landId/pump/$pumpId/update'
+      path: '/client/land/$landId/pump/$pumpId/update'
+      fullPath: '/client/land/$landId/pump/$pumpId/update'
+      preLoaderRoute: typeof ClientLandLandIdPumpPumpIdUpdateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/client/land/$landId/plant/$plantId/update': {
+      id: '/client/land/$landId/plant/$plantId/update'
+      path: '/client/land/$landId/plant/$plantId/update'
+      fullPath: '/client/land/$landId/plant/$plantId/update'
+      preLoaderRoute: typeof ClientLandLandIdPlantPlantIdUpdateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/client/land/$landId/automation/$automationId/update': {
+      id: '/client/land/$landId/automation/$automationId/update'
+      path: '/client/land/$landId/automation/$automationId/update'
+      fullPath: '/client/land/$landId/automation/$automationId/update'
+      preLoaderRoute: typeof ClientLandLandIdAutomationAutomationIdUpdateRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -281,15 +534,35 @@ const rootRouteChildren: RootRouteChildren = {
   LoginRoute: LoginRoute,
   AdminCreateUserRoute: AdminCreateUserRoute,
   AdminIndexRoute: AdminIndexRoute,
+  ClientIndexRoute: ClientIndexRoute,
   ConsultantIndexRoute: ConsultantIndexRoute,
   AdminUpdateUserIdRoute: AdminUpdateUserIdRoute,
   ClientLandCreateRoute: ClientLandCreateRoute,
-  ClientLandIndexRoute: ClientLandIndexRoute,
-  ClientLandUpdateIdRoute: ClientLandUpdateIdRoute,
-  ClientLandIdIndexRoute: ClientLandIdIndexRoute,
-  ClientLandIdSensorCreateRoute: ClientLandIdSensorCreateRoute,
-  ClientLandIdSensorIndexRoute: ClientLandIdSensorIndexRoute,
-  ClientLandIdSensorUpdateIdRoute: ClientLandIdSensorUpdateIdRoute,
+  ClientLandLandIdUpdateRoute: ClientLandLandIdUpdateRoute,
+  ClientLandLandIdIndexRoute: ClientLandLandIdIndexRoute,
+  ClientLandLandIdAutomationCreateRoute: ClientLandLandIdAutomationCreateRoute,
+  ClientLandLandIdPlantCreateRoute: ClientLandLandIdPlantCreateRoute,
+  ClientLandLandIdPumpCreateRoute: ClientLandLandIdPumpCreateRoute,
+  ClientLandLandIdSensorCreateRoute: ClientLandLandIdSensorCreateRoute,
+  ClientLandLandIdValveCreateRoute: ClientLandLandIdValveCreateRoute,
+  ClientLandLandIdAutomationAutomationIdUpdateRoute:
+    ClientLandLandIdAutomationAutomationIdUpdateRoute,
+  ClientLandLandIdPlantPlantIdUpdateRoute:
+    ClientLandLandIdPlantPlantIdUpdateRoute,
+  ClientLandLandIdPumpPumpIdUpdateRoute: ClientLandLandIdPumpPumpIdUpdateRoute,
+  ClientLandLandIdSensorSensorIdUpdateRoute:
+    ClientLandLandIdSensorSensorIdUpdateRoute,
+  ClientLandLandIdValveValveIdUpdateRoute:
+    ClientLandLandIdValveValveIdUpdateRoute,
+  ClientLandLandIdAutomationAutomationIdIndexRoute:
+    ClientLandLandIdAutomationAutomationIdIndexRoute,
+  ClientLandLandIdPlantPlantIdIndexRoute:
+    ClientLandLandIdPlantPlantIdIndexRoute,
+  ClientLandLandIdPumpPumpIdIndexRoute: ClientLandLandIdPumpPumpIdIndexRoute,
+  ClientLandLandIdSensorSensorIdIndexRoute:
+    ClientLandLandIdSensorSensorIdIndexRoute,
+  ClientLandLandIdValveValveIdIndexRoute:
+    ClientLandLandIdValveValveIdIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
