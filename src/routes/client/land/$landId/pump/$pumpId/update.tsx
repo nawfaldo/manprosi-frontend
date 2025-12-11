@@ -41,7 +41,7 @@ function RouteComponent() {
 
   const mutation = useMutation({
     mutationFn: updatePumpRequest,
-    onSuccess: (data) => {
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["land-pumps", landId] });
       queryClient.invalidateQueries({ queryKey: ["pump", pumpId] });
       navigate({ to: `/client/land/${landId}` });
