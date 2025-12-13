@@ -8,7 +8,7 @@ export const Route = createFileRoute('/client/land/$landId/plant/$plantId/')({
 
 // --- API Helpers ---
 
-// 1. Ambil detail satu plant berdasarkan ID
+// 1. Ambil detail satu plant
 async function getPlantById(plantId: string) {
     const res = await fetch(`${API_URL}/plants/${plantId}`, {
       credentials: "include",
@@ -19,7 +19,15 @@ async function getPlantById(plantId: string) {
     return data.data;
 }
 
-// 2. Hapus Plant
+// 2. Ambil detail seed untuk ditampilkan namanya
+async function getSeedById(id: number) {
+  const res = await fetch(`${API_URL}/seeds/${id}`, { credentials: "include" });
+  const data = await res.json();
+  if (!res.ok) throw new Error("Failed");
+  return data.data;
+}
+
+// 3. Hapus Plant
 async function deletePlant(id: number) {
     const res = await fetch(`${API_URL}/plants/${id}`, {
       method: "DELETE",
@@ -44,6 +52,13 @@ function RouteComponent() {
     } = useQuery({
       queryKey: ["plant", plantId],
       queryFn: () => getPlantById(plantId),
+    });
+
+    // Query Detail Seed (Hanya dijalankan jika plant sudah ter-load dan punya seed_id)
+    const { data: seed } = useQuery({
+        queryKey: ["seed", plant?.seed_id],
+        queryFn: () => getSeedById(plant!.seed_id),
+        enabled: !!plant?.seed_id // Penting: Jangan fetch jika plant belum ada
     });
   
     // Mutation Delete
@@ -98,10 +113,11 @@ function RouteComponent() {
                 <div className="space-y-3">
                     <p><strong className="font-semibold text-black">Name:</strong> {plant.name}</p>
                     <p><strong className="font-semibold text-black">Quantity:</strong> {plant.quantity}</p>
+                    <p><strong className="font-semibold text-black">Seed Source:</strong> {seed ? seed.name : 'Loading...'}</p>
                 </div>
             </div>
 
-            {/* Bagian Tanggal (Menggunakan style yang sama dengan Reading di sensor) */}
+            {/* Bagian Tanggal */}
             <div>
                 <h3 className="text-sm font-bold text-gray-500 uppercase mb-2">Planting Details</h3>
                 <div>

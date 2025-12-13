@@ -28,19 +28,16 @@ import { Route as ClientLandLandIdValveCreateRouteImport } from './routes/client
 import { Route as ClientLandLandIdSensorCreateRouteImport } from './routes/client/land/$landId/sensor/create'
 import { Route as ClientLandLandIdPumpCreateRouteImport } from './routes/client/land/$landId/pump/create'
 import { Route as ClientLandLandIdPlantCreateRouteImport } from './routes/client/land/$landId/plant/create'
-import { Route as ClientLandLandIdPestControlCreateRouteImport } from './routes/client/land/$landId/pest-control/create'
 import { Route as ClientLandLandIdAutomationCreateRouteImport } from './routes/client/land/$landId/automation/create'
 import { Route as ClientLandLandIdValveValveIdIndexRouteImport } from './routes/client/land/$landId/valve/$valveId/index'
 import { Route as ClientLandLandIdSensorSensorIdIndexRouteImport } from './routes/client/land/$landId/sensor/$sensorId/index'
 import { Route as ClientLandLandIdPumpPumpIdIndexRouteImport } from './routes/client/land/$landId/pump/$pumpId/index'
 import { Route as ClientLandLandIdPlantPlantIdIndexRouteImport } from './routes/client/land/$landId/plant/$plantId/index'
-import { Route as ClientLandLandIdPestControlPestIdIndexRouteImport } from './routes/client/land/$landId/pest-control/$pestId/index'
 import { Route as ClientLandLandIdAutomationAutomationIdIndexRouteImport } from './routes/client/land/$landId/automation/$automationId/index'
 import { Route as ClientLandLandIdValveValveIdUpdateRouteImport } from './routes/client/land/$landId/valve/$valveId/update'
 import { Route as ClientLandLandIdSensorSensorIdUpdateRouteImport } from './routes/client/land/$landId/sensor/$sensorId/update'
 import { Route as ClientLandLandIdPumpPumpIdUpdateRouteImport } from './routes/client/land/$landId/pump/$pumpId/update'
 import { Route as ClientLandLandIdPlantPlantIdUpdateRouteImport } from './routes/client/land/$landId/plant/$plantId/update'
-import { Route as ClientLandLandIdPestControlPestIdUpdateRouteImport } from './routes/client/land/$landId/pest-control/$pestId/update'
 import { Route as ClientLandLandIdAutomationAutomationIdUpdateRouteImport } from './routes/client/land/$landId/automation/$automationId/update'
 
 const LoginRoute = LoginRouteImport.update({
@@ -147,12 +144,6 @@ const ClientLandLandIdPlantCreateRoute =
     path: '/client/land/$landId/plant/create',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ClientLandLandIdPestControlCreateRoute =
-  ClientLandLandIdPestControlCreateRouteImport.update({
-    id: '/client/land/$landId/pest-control/create',
-    path: '/client/land/$landId/pest-control/create',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const ClientLandLandIdAutomationCreateRoute =
   ClientLandLandIdAutomationCreateRouteImport.update({
     id: '/client/land/$landId/automation/create',
@@ -181,12 +172,6 @@ const ClientLandLandIdPlantPlantIdIndexRoute =
   ClientLandLandIdPlantPlantIdIndexRouteImport.update({
     id: '/client/land/$landId/plant/$plantId/',
     path: '/client/land/$landId/plant/$plantId/',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ClientLandLandIdPestControlPestIdIndexRoute =
-  ClientLandLandIdPestControlPestIdIndexRouteImport.update({
-    id: '/client/land/$landId/pest-control/$pestId/',
-    path: '/client/land/$landId/pest-control/$pestId/',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ClientLandLandIdAutomationAutomationIdIndexRoute =
@@ -219,12 +204,6 @@ const ClientLandLandIdPlantPlantIdUpdateRoute =
     path: '/client/land/$landId/plant/$plantId/update',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ClientLandLandIdPestControlPestIdUpdateRoute =
-  ClientLandLandIdPestControlPestIdUpdateRouteImport.update({
-    id: '/client/land/$landId/pest-control/$pestId/update',
-    path: '/client/land/$landId/pest-control/$pestId/update',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const ClientLandLandIdAutomationAutomationIdUpdateRoute =
   ClientLandLandIdAutomationAutomationIdUpdateRouteImport.update({
     id: '/client/land/$landId/automation/$automationId/update',
@@ -249,19 +228,16 @@ export interface FileRoutesByFullPath {
   '/consultant/recommendation/$recId': typeof ConsultantRecommendationRecIdIndexRoute
   '/consultant/seed/$seedId': typeof ConsultantSeedSeedIdIndexRoute
   '/client/land/$landId/automation/create': typeof ClientLandLandIdAutomationCreateRoute
-  '/client/land/$landId/pest-control/create': typeof ClientLandLandIdPestControlCreateRoute
   '/client/land/$landId/plant/create': typeof ClientLandLandIdPlantCreateRoute
   '/client/land/$landId/pump/create': typeof ClientLandLandIdPumpCreateRoute
   '/client/land/$landId/sensor/create': typeof ClientLandLandIdSensorCreateRoute
   '/client/land/$landId/valve/create': typeof ClientLandLandIdValveCreateRoute
   '/client/land/$landId/automation/$automationId/update': typeof ClientLandLandIdAutomationAutomationIdUpdateRoute
-  '/client/land/$landId/pest-control/$pestId/update': typeof ClientLandLandIdPestControlPestIdUpdateRoute
   '/client/land/$landId/plant/$plantId/update': typeof ClientLandLandIdPlantPlantIdUpdateRoute
   '/client/land/$landId/pump/$pumpId/update': typeof ClientLandLandIdPumpPumpIdUpdateRoute
   '/client/land/$landId/sensor/$sensorId/update': typeof ClientLandLandIdSensorSensorIdUpdateRoute
   '/client/land/$landId/valve/$valveId/update': typeof ClientLandLandIdValveValveIdUpdateRoute
   '/client/land/$landId/automation/$automationId': typeof ClientLandLandIdAutomationAutomationIdIndexRoute
-  '/client/land/$landId/pest-control/$pestId': typeof ClientLandLandIdPestControlPestIdIndexRoute
   '/client/land/$landId/plant/$plantId': typeof ClientLandLandIdPlantPlantIdIndexRoute
   '/client/land/$landId/pump/$pumpId': typeof ClientLandLandIdPumpPumpIdIndexRoute
   '/client/land/$landId/sensor/$sensorId': typeof ClientLandLandIdSensorSensorIdIndexRoute
@@ -284,19 +260,16 @@ export interface FileRoutesByTo {
   '/consultant/recommendation/$recId': typeof ConsultantRecommendationRecIdIndexRoute
   '/consultant/seed/$seedId': typeof ConsultantSeedSeedIdIndexRoute
   '/client/land/$landId/automation/create': typeof ClientLandLandIdAutomationCreateRoute
-  '/client/land/$landId/pest-control/create': typeof ClientLandLandIdPestControlCreateRoute
   '/client/land/$landId/plant/create': typeof ClientLandLandIdPlantCreateRoute
   '/client/land/$landId/pump/create': typeof ClientLandLandIdPumpCreateRoute
   '/client/land/$landId/sensor/create': typeof ClientLandLandIdSensorCreateRoute
   '/client/land/$landId/valve/create': typeof ClientLandLandIdValveCreateRoute
   '/client/land/$landId/automation/$automationId/update': typeof ClientLandLandIdAutomationAutomationIdUpdateRoute
-  '/client/land/$landId/pest-control/$pestId/update': typeof ClientLandLandIdPestControlPestIdUpdateRoute
   '/client/land/$landId/plant/$plantId/update': typeof ClientLandLandIdPlantPlantIdUpdateRoute
   '/client/land/$landId/pump/$pumpId/update': typeof ClientLandLandIdPumpPumpIdUpdateRoute
   '/client/land/$landId/sensor/$sensorId/update': typeof ClientLandLandIdSensorSensorIdUpdateRoute
   '/client/land/$landId/valve/$valveId/update': typeof ClientLandLandIdValveValveIdUpdateRoute
   '/client/land/$landId/automation/$automationId': typeof ClientLandLandIdAutomationAutomationIdIndexRoute
-  '/client/land/$landId/pest-control/$pestId': typeof ClientLandLandIdPestControlPestIdIndexRoute
   '/client/land/$landId/plant/$plantId': typeof ClientLandLandIdPlantPlantIdIndexRoute
   '/client/land/$landId/pump/$pumpId': typeof ClientLandLandIdPumpPumpIdIndexRoute
   '/client/land/$landId/sensor/$sensorId': typeof ClientLandLandIdSensorSensorIdIndexRoute
@@ -320,19 +293,16 @@ export interface FileRoutesById {
   '/consultant/recommendation/$recId/': typeof ConsultantRecommendationRecIdIndexRoute
   '/consultant/seed/$seedId/': typeof ConsultantSeedSeedIdIndexRoute
   '/client/land/$landId/automation/create': typeof ClientLandLandIdAutomationCreateRoute
-  '/client/land/$landId/pest-control/create': typeof ClientLandLandIdPestControlCreateRoute
   '/client/land/$landId/plant/create': typeof ClientLandLandIdPlantCreateRoute
   '/client/land/$landId/pump/create': typeof ClientLandLandIdPumpCreateRoute
   '/client/land/$landId/sensor/create': typeof ClientLandLandIdSensorCreateRoute
   '/client/land/$landId/valve/create': typeof ClientLandLandIdValveCreateRoute
   '/client/land/$landId/automation/$automationId/update': typeof ClientLandLandIdAutomationAutomationIdUpdateRoute
-  '/client/land/$landId/pest-control/$pestId/update': typeof ClientLandLandIdPestControlPestIdUpdateRoute
   '/client/land/$landId/plant/$plantId/update': typeof ClientLandLandIdPlantPlantIdUpdateRoute
   '/client/land/$landId/pump/$pumpId/update': typeof ClientLandLandIdPumpPumpIdUpdateRoute
   '/client/land/$landId/sensor/$sensorId/update': typeof ClientLandLandIdSensorSensorIdUpdateRoute
   '/client/land/$landId/valve/$valveId/update': typeof ClientLandLandIdValveValveIdUpdateRoute
   '/client/land/$landId/automation/$automationId/': typeof ClientLandLandIdAutomationAutomationIdIndexRoute
-  '/client/land/$landId/pest-control/$pestId/': typeof ClientLandLandIdPestControlPestIdIndexRoute
   '/client/land/$landId/plant/$plantId/': typeof ClientLandLandIdPlantPlantIdIndexRoute
   '/client/land/$landId/pump/$pumpId/': typeof ClientLandLandIdPumpPumpIdIndexRoute
   '/client/land/$landId/sensor/$sensorId/': typeof ClientLandLandIdSensorSensorIdIndexRoute
@@ -357,19 +327,16 @@ export interface FileRouteTypes {
     | '/consultant/recommendation/$recId'
     | '/consultant/seed/$seedId'
     | '/client/land/$landId/automation/create'
-    | '/client/land/$landId/pest-control/create'
     | '/client/land/$landId/plant/create'
     | '/client/land/$landId/pump/create'
     | '/client/land/$landId/sensor/create'
     | '/client/land/$landId/valve/create'
     | '/client/land/$landId/automation/$automationId/update'
-    | '/client/land/$landId/pest-control/$pestId/update'
     | '/client/land/$landId/plant/$plantId/update'
     | '/client/land/$landId/pump/$pumpId/update'
     | '/client/land/$landId/sensor/$sensorId/update'
     | '/client/land/$landId/valve/$valveId/update'
     | '/client/land/$landId/automation/$automationId'
-    | '/client/land/$landId/pest-control/$pestId'
     | '/client/land/$landId/plant/$plantId'
     | '/client/land/$landId/pump/$pumpId'
     | '/client/land/$landId/sensor/$sensorId'
@@ -392,19 +359,16 @@ export interface FileRouteTypes {
     | '/consultant/recommendation/$recId'
     | '/consultant/seed/$seedId'
     | '/client/land/$landId/automation/create'
-    | '/client/land/$landId/pest-control/create'
     | '/client/land/$landId/plant/create'
     | '/client/land/$landId/pump/create'
     | '/client/land/$landId/sensor/create'
     | '/client/land/$landId/valve/create'
     | '/client/land/$landId/automation/$automationId/update'
-    | '/client/land/$landId/pest-control/$pestId/update'
     | '/client/land/$landId/plant/$plantId/update'
     | '/client/land/$landId/pump/$pumpId/update'
     | '/client/land/$landId/sensor/$sensorId/update'
     | '/client/land/$landId/valve/$valveId/update'
     | '/client/land/$landId/automation/$automationId'
-    | '/client/land/$landId/pest-control/$pestId'
     | '/client/land/$landId/plant/$plantId'
     | '/client/land/$landId/pump/$pumpId'
     | '/client/land/$landId/sensor/$sensorId'
@@ -427,19 +391,16 @@ export interface FileRouteTypes {
     | '/consultant/recommendation/$recId/'
     | '/consultant/seed/$seedId/'
     | '/client/land/$landId/automation/create'
-    | '/client/land/$landId/pest-control/create'
     | '/client/land/$landId/plant/create'
     | '/client/land/$landId/pump/create'
     | '/client/land/$landId/sensor/create'
     | '/client/land/$landId/valve/create'
     | '/client/land/$landId/automation/$automationId/update'
-    | '/client/land/$landId/pest-control/$pestId/update'
     | '/client/land/$landId/plant/$plantId/update'
     | '/client/land/$landId/pump/$pumpId/update'
     | '/client/land/$landId/sensor/$sensorId/update'
     | '/client/land/$landId/valve/$valveId/update'
     | '/client/land/$landId/automation/$automationId/'
-    | '/client/land/$landId/pest-control/$pestId/'
     | '/client/land/$landId/plant/$plantId/'
     | '/client/land/$landId/pump/$pumpId/'
     | '/client/land/$landId/sensor/$sensorId/'
@@ -463,19 +424,16 @@ export interface RootRouteChildren {
   ConsultantRecommendationRecIdIndexRoute: typeof ConsultantRecommendationRecIdIndexRoute
   ConsultantSeedSeedIdIndexRoute: typeof ConsultantSeedSeedIdIndexRoute
   ClientLandLandIdAutomationCreateRoute: typeof ClientLandLandIdAutomationCreateRoute
-  ClientLandLandIdPestControlCreateRoute: typeof ClientLandLandIdPestControlCreateRoute
   ClientLandLandIdPlantCreateRoute: typeof ClientLandLandIdPlantCreateRoute
   ClientLandLandIdPumpCreateRoute: typeof ClientLandLandIdPumpCreateRoute
   ClientLandLandIdSensorCreateRoute: typeof ClientLandLandIdSensorCreateRoute
   ClientLandLandIdValveCreateRoute: typeof ClientLandLandIdValveCreateRoute
   ClientLandLandIdAutomationAutomationIdUpdateRoute: typeof ClientLandLandIdAutomationAutomationIdUpdateRoute
-  ClientLandLandIdPestControlPestIdUpdateRoute: typeof ClientLandLandIdPestControlPestIdUpdateRoute
   ClientLandLandIdPlantPlantIdUpdateRoute: typeof ClientLandLandIdPlantPlantIdUpdateRoute
   ClientLandLandIdPumpPumpIdUpdateRoute: typeof ClientLandLandIdPumpPumpIdUpdateRoute
   ClientLandLandIdSensorSensorIdUpdateRoute: typeof ClientLandLandIdSensorSensorIdUpdateRoute
   ClientLandLandIdValveValveIdUpdateRoute: typeof ClientLandLandIdValveValveIdUpdateRoute
   ClientLandLandIdAutomationAutomationIdIndexRoute: typeof ClientLandLandIdAutomationAutomationIdIndexRoute
-  ClientLandLandIdPestControlPestIdIndexRoute: typeof ClientLandLandIdPestControlPestIdIndexRoute
   ClientLandLandIdPlantPlantIdIndexRoute: typeof ClientLandLandIdPlantPlantIdIndexRoute
   ClientLandLandIdPumpPumpIdIndexRoute: typeof ClientLandLandIdPumpPumpIdIndexRoute
   ClientLandLandIdSensorSensorIdIndexRoute: typeof ClientLandLandIdSensorSensorIdIndexRoute
@@ -617,13 +575,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClientLandLandIdPlantCreateRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/client/land/$landId/pest-control/create': {
-      id: '/client/land/$landId/pest-control/create'
-      path: '/client/land/$landId/pest-control/create'
-      fullPath: '/client/land/$landId/pest-control/create'
-      preLoaderRoute: typeof ClientLandLandIdPestControlCreateRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/client/land/$landId/automation/create': {
       id: '/client/land/$landId/automation/create'
       path: '/client/land/$landId/automation/create'
@@ -657,13 +608,6 @@ declare module '@tanstack/react-router' {
       path: '/client/land/$landId/plant/$plantId'
       fullPath: '/client/land/$landId/plant/$plantId'
       preLoaderRoute: typeof ClientLandLandIdPlantPlantIdIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/client/land/$landId/pest-control/$pestId/': {
-      id: '/client/land/$landId/pest-control/$pestId/'
-      path: '/client/land/$landId/pest-control/$pestId'
-      fullPath: '/client/land/$landId/pest-control/$pestId'
-      preLoaderRoute: typeof ClientLandLandIdPestControlPestIdIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/client/land/$landId/automation/$automationId/': {
@@ -701,13 +645,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClientLandLandIdPlantPlantIdUpdateRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/client/land/$landId/pest-control/$pestId/update': {
-      id: '/client/land/$landId/pest-control/$pestId/update'
-      path: '/client/land/$landId/pest-control/$pestId/update'
-      fullPath: '/client/land/$landId/pest-control/$pestId/update'
-      preLoaderRoute: typeof ClientLandLandIdPestControlPestIdUpdateRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/client/land/$landId/automation/$automationId/update': {
       id: '/client/land/$landId/automation/$automationId/update'
       path: '/client/land/$landId/automation/$automationId/update'
@@ -737,16 +674,12 @@ const rootRouteChildren: RootRouteChildren = {
     ConsultantRecommendationRecIdIndexRoute,
   ConsultantSeedSeedIdIndexRoute: ConsultantSeedSeedIdIndexRoute,
   ClientLandLandIdAutomationCreateRoute: ClientLandLandIdAutomationCreateRoute,
-  ClientLandLandIdPestControlCreateRoute:
-    ClientLandLandIdPestControlCreateRoute,
   ClientLandLandIdPlantCreateRoute: ClientLandLandIdPlantCreateRoute,
   ClientLandLandIdPumpCreateRoute: ClientLandLandIdPumpCreateRoute,
   ClientLandLandIdSensorCreateRoute: ClientLandLandIdSensorCreateRoute,
   ClientLandLandIdValveCreateRoute: ClientLandLandIdValveCreateRoute,
   ClientLandLandIdAutomationAutomationIdUpdateRoute:
     ClientLandLandIdAutomationAutomationIdUpdateRoute,
-  ClientLandLandIdPestControlPestIdUpdateRoute:
-    ClientLandLandIdPestControlPestIdUpdateRoute,
   ClientLandLandIdPlantPlantIdUpdateRoute:
     ClientLandLandIdPlantPlantIdUpdateRoute,
   ClientLandLandIdPumpPumpIdUpdateRoute: ClientLandLandIdPumpPumpIdUpdateRoute,
@@ -756,8 +689,6 @@ const rootRouteChildren: RootRouteChildren = {
     ClientLandLandIdValveValveIdUpdateRoute,
   ClientLandLandIdAutomationAutomationIdIndexRoute:
     ClientLandLandIdAutomationAutomationIdIndexRoute,
-  ClientLandLandIdPestControlPestIdIndexRoute:
-    ClientLandLandIdPestControlPestIdIndexRoute,
   ClientLandLandIdPlantPlantIdIndexRoute:
     ClientLandLandIdPlantPlantIdIndexRoute,
   ClientLandLandIdPumpPumpIdIndexRoute: ClientLandLandIdPumpPumpIdIndexRoute,
